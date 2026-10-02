@@ -1,20 +1,19 @@
 import { useState } from 'react'
+import Cabecalho from './components/Cabecalho'
+import Rodape from './components/Rodape'
 
 function App() {
 
-  const [valorState, setValorState] = useState(5)
-  let valorVariavel = 5
+  const [carros, setCarros] = useState<number>(0)
 
-  let aumentar = () => {
-    setValorState(valorState + 5)
-    valorVariavel += 5
+  function aumentar() {
+    setCarros(carros + 1)
   }
 
   return (
     <>
-      <p>Valor State: {valorState}</p>
-      <p>Valor Variável: {valorVariavel}</p>
-      <button onClick={aumentar}>Aumentar</button>
+      <Cabecalho carros={carros} />
+      <Rodape />
     </>
   )
 }
